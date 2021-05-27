@@ -13,11 +13,11 @@ router.get('/taxpayer', async (req, res) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      data: JSON.stringify({
+      params: {
         "search": search,
         "cursor": cursor,
         "limit": parseInt(limit)
-      })
+      }
     })
     response = response.data || { indebtedness: [] }
   } catch (error) {
